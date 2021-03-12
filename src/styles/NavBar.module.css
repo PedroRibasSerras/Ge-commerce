@@ -1,0 +1,99 @@
+.navBarContainer{
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+    height: 80px;
+    background:#131313;
+}
+
+.navBarContainer a{
+    margin-right: 30px;
+    color: white;
+}
+
+.navBarContainer a:hover{
+    filter: brightness(0.7);
+    transition: 0.2s;
+}
+
+.navBarContainer i{
+    margin-right: 5px;
+}
+
+.corners{
+    width: 10px;
+    flex-grow: 1;
+
+    display:flex;
+    align-items: center;
+}
+
+.corners > button{
+    height: 40px;
+    width: 40px;
+    margin: 0px 5px;
+    
+    background-color: transparent;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+.corners > button:hover{
+    filter:brightness(0.5);
+    transition: 0.2s;
+}
+
+.corners > button i{
+    font-size: 26px;
+    margin: 0;
+    color: white;
+}
+
+.corners > a img{
+    margin-top: 3px;
+    height: 73px;
+    width: auto;
+ }
+ 
+ .corners > a img:first-child{
+     display: inline;
+ }
+ 
+ .corners > a img:last-child{
+     display: none;
+ }
+
+ @media (max-width: 1061px) {
+    .corners > a img:first-child{
+        display: none;
+    }
+    .corners > a img:last-child{
+        display: inline;
+    }
+}
+
+@media (max-width: 555px) {
+    .corners > a img{
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media (max-width: 355px) {
+    .corners > a img{
+        width: 35px;
+        height: auto;
+    }
+
+    .corners > button{
+        margin: 0px 0px;
+    }
+}
+

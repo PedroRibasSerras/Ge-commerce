@@ -1,0 +1,52 @@
+.searchBarContainer{
+    display: flex;
+    justify-content: center;
+
+    flex-grow: 2;
+    
+    max-width: 30%;
+    
+    height:35px;
+
+
+}
+
+.searchBarContainer button:hover{
+    filter: brightness(0.8);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.searchBarContainer button:first-child{
+    border: none;
+    border-radius: 20px 0px 0px 20px;
+    width: 4rem;
+}
+
+.searchBarContainer button:last-child{
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+    width: 4rem;
+    
+}
+
+.searchBarContainer input{
+    border: none;
+    flex-grow: 1;
+    min-width: 80px;
+}
+
+@media (max-width: 555px) {
+    .corners > a img{
+        width: 40px;
+        height: auto;
+    }
+    .searchBarContainer button:first-child{
+        display: none;
+    }
+
+    .searchBarContainer input{
+        border-radius: 20px 0px 0px 20px;
+        padding: 10px;
+    }
+}

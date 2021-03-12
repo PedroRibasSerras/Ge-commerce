@@ -1,0 +1,61 @@
+.userNavagationContainer{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    
+    width: 100%;
+}
+
+.userNavagationContainer ul{
+
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    
+}
+
+.importance5,
+.importance4,
+.importance3,
+.importance2,
+.importance1{
+    display: block;
+}
+
+@media (max-width: 1711px) {
+    .importance5{
+     display: none;
+
+    }
+  }
+
+@media (max-width: 1417px) {
+    .importance4{
+        display: none;
+    }
+}
+
+@media (max-width: 1061px) {
+    .importance3{
+        display: none;
+    }
+}
+
+@media (max-width: 785px) {
+    .importance2{
+        display: none;
+    }
+}
+
+@media (max-width: 555px) {
+    .importance1 span{
+        display: none;
+    }
+    .importance1 i{
+        font-size: 3rem;
+    }
+    
+}
+
+
+
