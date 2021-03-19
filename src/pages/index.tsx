@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Carosel } from '../components/Carosel';
 import { NavBar } from '../components/NavBar';
 import styles from '../styles/Home.module.css';
 
@@ -12,6 +13,16 @@ export default function Home() {
       </Head>
 
       <NavBar />
+      <Carosel heightSize="100vh" images={[
+        {
+          src:"teste.jpg",
+          alt:"Teste"
+        },
+        {
+          src:"teste2.jpg",
+          alt:"Teste2"
+        }
+      ]} />
     </div>
   )
 }

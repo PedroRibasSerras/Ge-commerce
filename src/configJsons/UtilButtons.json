@@ -13,10 +13,5 @@
         "text":"Carrinho",
         "icon":"fa fa-shopping-cart",
         "importance": 1
-    },
-    {
-        "text":"Carri",
-        "icon":"fa fa-shopping-cart",
-        "importance": 4
     }
 ]
