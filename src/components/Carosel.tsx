@@ -39,7 +39,7 @@ function Carosel({ images, isEnableFinalButtons }:CaroselProps){
 
     let imagesList = images.map((image) => {
         return(
-            <img style={{transform: trans}} src={image.src} alt=""/>
+            <img key={image.src} style={{transform: trans}} src={image.src} alt=""/>
         )}
     )
     
