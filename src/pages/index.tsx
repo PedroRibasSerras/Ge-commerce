@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <Head>
         <title>Generic E-commerce</title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,16 +13,22 @@ export default function Home() {
       </Head>
 
       <NavBar />
-      <Carosel heightSize="100vh" images={[
-        {
-          src:"teste.jpg",
-          alt:"Teste"
-        },
-        {
-          src:"teste2.jpg",
-          alt:"Teste2"
-        }
-      ]} />
+      <div className={styles.bannersCarosel}>
+        <Carosel isEnableFinalButtons={false} images={[
+          {
+            src:"teste.jpg",
+            alt:"Teste"
+          },
+          {
+            src:"teste2.jpg",
+            alt:"Teste2"
+          },
+          {
+            src:"teste3.jpg",
+            alt:"Teste3"
+          }
+        ]} />
+      </div>
     </div>
   )
 }

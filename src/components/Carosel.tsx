@@ -8,44 +8,61 @@ interface CaroselImageObject{
 
 interface CaroselProps{
     images: Array<CaroselImageObject>;
-    heightSize: string;
+    isEnableFinalButtons:boolean;
 }
 
-function Carosel({ images, heightSize }:CaroselProps){
+function Carosel({ images, isEnableFinalButtons }:CaroselProps){
+    
     const [ imageNumber, setImageNumber ] = useState(0);
-    const [ newImageNumber, setNewImageNumber ] = useState(0);
-    const [ isInTransition, setIsInTransition ] = useState(true);
 
 
     function next(){
-        if(imageNumber < images.length - 1)
-            setNewImageNumber(imageNumber + 1);
-        else
-            setNewImageNumber (0);
+        if(imageNumber < images.length - 1){
+            setImageNumber(imageNumber + 1);
+        }   
+        else{
+            setImageNumber(0);
+        }
     }
 
     function previous(){
-        if(imageNumber != 0)
-            setNewImageNumber (imageNumber - 1);
-        else
-            setNewImageNumber(images.length - 1);
+        if(imageNumber != 0){
+            setImageNumber(imageNumber - 1);
+        }   
+        else{
+            setImageNumber(images.length - 1);
+        }
     }
 
 
-    let mainImage = images[imageNumber];
-    let newImage = images[newImageNumber];
+    let trans = `translateX(${imageNumber*-100}%)`;
+
+    let imagesList = images.map((image) => {
+        return(
+            <img style={{transform: trans}} src={image.src} alt=""/>
+        )}
+    )
+    
+
     return(
-        <div style={{ height: heightSize }}className={styles.caroselConteiner}>
-            <section>d</section>
-            {/* <button onClick={previous}></button> */}
-            
-                {(isInTransition) &&
-                    <img className={styles.newImage} src={newImage.src} alt={newImage.alt}/>
+        <div className={ styles.caroselContainer } >
+            <div className={ styles.imagesFlex } >
+                {imagesList}
+            </div>
+
+            <div className={styles.controlls}>
+                {( isEnableFinalButtons || imageNumber !== 0) &&
+                <button style={{}}onClick = {previous} className={styles.previousBtn}>
+                    <i className="fa fa-chevron-left"></i>
+                </button>
                 }
-                {/* <img className={styles.mainImage}src={mainImage.src} alt={mainImage.alt}/> */}
-            
-            {/* <button onClick={next}></button> */}
-            <section></section>
+                <div></div>
+                {(isEnableFinalButtons || imageNumber !== images.length - 1) &&
+                <button onClick = {next} className={styles.nextBtn}>
+                    <i className="fa fa-chevron-right"></i>
+                </button>
+                }
+            </div>
         </div>
     );
 };

@@ -1,46 +1,64 @@
-.caroselConteiner{
-    background-color: aqua;
+.caroselContainer{
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     text-align: center;
+}
 
+.imagesFlex {
     display: flex;
-}
-.caroselConteiner > div{
-    background:black;
-}
-.caroselConteiner > section{
-    background:green;
-    width: 1000px;
-    flex-grow: 1;
-    z-index: 2;
-}
-
-
-.mainImage{
-    width: auto;
+    
     height: 100%;
-    transition: 1s;
-    z-index: 0;
+    overflow: hidden;
+}
+
+.imagesFlex  img{
+    width: 100%;
+    max-height: 100%;
+    flex: none;
+    object-fit: cover;
+    transition: 2s;
+}
+
+.controlls{
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caroselContainer button{
+    position: relative;
+    top: -50%;
+    transform: translateY(-50%);
+    
+    background-color: rgba(176, 137, 212, 0.4);
+    color: rgb(160, 160, 160);
+
+    font-size: 2em;
+
+    height: 25%;
+    max-width: 40px;
+    width: 2%;
+    min-width: 25px;
+    margin: 0 20px;
+
+    
+    border: none;
+    border-radius: 10px;
+
+    transition: 0.3s;
+    cursor: pointer;
     
 }
-.newImage{
-    width: auto;
-    height: 100%;
-    transition: 1s;
-    z-index: 0;
+
+.caroselContainer button.nextBtn{
     
-}    
-.newImage:hover{
-    width: auto;
-    height: 100%;
-    transition: 1s;
-    transform: translateX(-100%);   
-    z-index: 0;
+    
 }
 
-.caroselConteiner button{
-    width: auto;
-    height: 100%;
-    z-index: 1;
-
+.caroselContainer button:hover{
+    background-color: rgba(176, 137, 212, 0.7);
 }
+
+
